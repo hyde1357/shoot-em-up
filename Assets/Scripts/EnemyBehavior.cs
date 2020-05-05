@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     private Weapon[] weapons;
+    [SerializeField] AudioClip gunSound;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -14,11 +16,13 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
         foreach (Weapon weapon in weapons)
         {
             if (weapon != null && weapon.CanAttack)
             {
                 weapon.Attack(true);
+                audioSource.PlayOneShot(gunSound);
             }
         }
     }
