@@ -9,9 +9,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MoveShip();
+        Shoot();
+    }
 
-        //bool shoot = Input.GetButtonDown(KeyCode.Space);
-        if(Input.GetKeyDown(KeyCode.Space))
+    private void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Weapon weapon = GetComponent<Weapon>();
             if (weapon != null)
@@ -25,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
-
+        //if(transform.position.x <= 4.1 && transform.position.x >= -4.1) { }
         Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
         movement *= Time.deltaTime;
         transform.Translate(movement);

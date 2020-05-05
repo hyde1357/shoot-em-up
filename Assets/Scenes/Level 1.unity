@@ -121,6 +121,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1007921057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537834086475331667, guid: cf702a49b165c804bada6e09225d26ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 3537834085469839346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1007921058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007921057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaeb2cb02ceaba84ca768abfb52cb6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 2
+  isEnemy: 0
+  explosionParticles: {fileID: 0}
 --- !u!1001 &1545144225031889831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 1545144223947238977, guid: 3c837a0c14f24c34d91b1bf0eec4e149,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.51
+      value: -1.65
       objectReference: {fileID: 0}
     - target: {fileID: 1545144223947238977, guid: 3c837a0c14f24c34d91b1bf0eec4e149,
         type: 3}
@@ -266,6 +287,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1209829026522218176, guid: cf702a49b165c804bada6e09225d26ee,
+        type: 3}
+      propertyPath: shootingRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3537834086475331665, guid: cf702a49b165c804bada6e09225d26ee,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -9,6 +9,6 @@ public class Shot : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
 }

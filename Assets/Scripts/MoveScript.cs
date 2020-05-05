@@ -12,5 +12,14 @@ public class MoveScript : MonoBehaviour
         Vector3 movement = new Vector3(speed.x * direction.x, speed.y * direction.y, 0);
         movement *= Time.deltaTime;
         transform.Translate(movement);
+
+        if(transform.position.x >= 4.1)
+        {
+            direction.x = -1;
+        }
+        else if(transform.position.x <= -4.1)
+        {
+            direction.x = 1;
+        }
     }
 }

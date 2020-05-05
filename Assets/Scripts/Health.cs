@@ -19,9 +19,12 @@ public class Health : MonoBehaviour
                 Destroy(shot.gameObject);
                 if(hp <= 0)
                 {
-                    explosionParticles.Play();
+                    DestroyShip();
+                    /*explosionParticles.Play();
                     gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                    Invoke("DestroyShip", 1f);
+                    //gameObject.GetComponent<MeshCollider>().enabled = false;
+                    gameObject.GetComponent<Weapon>().enabled = false;
+                    Invoke("DestroyShip", 1f);*/
                 }
             }
         }
