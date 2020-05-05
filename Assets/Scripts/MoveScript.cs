@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveScript : MonoBehaviour
 {
     [SerializeField] Vector2 speed = new Vector2(2f, 2f);
-    [SerializeField] Vector2 direction = new Vector2(-1, 0);
+    public Vector2 direction = new Vector2(-1, 0);
 
     void Update()
     {

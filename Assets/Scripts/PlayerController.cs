@@ -9,6 +9,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MoveShip();
+
+        //bool shoot = Input.GetButtonDown(KeyCode.Space);
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Weapon weapon = GetComponent<Weapon>();
+            if (weapon != null)
+            {
+                weapon.Attack(false);
+            }
+        }
     }
 
     private void MoveShip()
