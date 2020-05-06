@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 210074004379026909}
   m_Layer: 0
   m_Name: SinWaveEnemy
-  m_TagString: Enemy
+  m_TagString: SinEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3320597725753644295}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -1.4291002, y: 2.99, z: -2.6443005}
   m_LocalScale: {x: 3, y: 3.5, z: 1}
   m_Children:
@@ -337,4 +337,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 5340277252050775740, guid: 87dfaa9af18e3524f8b5694088e730af,
     type: 3}
-  shootingRate: 0.75
+  shootingRate: 0.55

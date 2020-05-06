@@ -568,6 +568,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SinWaveEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4279640608859413964, guid: 562ffb155905aac4fb4a52fd21117649,
+        type: 3}
+      propertyPath: shootingRate
+      value: 0.55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 562ffb155905aac4fb4a52fd21117649, type: 3}
 --- !u!4 &5397193520883594685 stripped

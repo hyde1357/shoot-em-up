@@ -7,6 +7,11 @@ public class MoveScript : MonoBehaviour
 
     void Update()
     {
+        if(gameObject.tag == "SinEnemy")
+        {
+
+        }
+
         Vector3 movement = new Vector3(speed.x * direction.x, speed.y * direction.y, 0);
         movement *= Time.deltaTime;
         transform.Translate(movement);
