@@ -35,7 +35,6 @@ public class BattleSystem : MonoBehaviour
         {
             enemyList.Add(child);
             child.GetComponent<EnemyBehavior>().Spawn();
-            print("Enemy spawned");
         }
         enemiesSpawned = true;
     }

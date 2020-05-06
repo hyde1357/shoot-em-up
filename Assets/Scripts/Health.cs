@@ -40,7 +40,6 @@ public class Health : MonoBehaviour
                     // Restart and disable everything if the destroyed object was player, destroy gameobject if not
                     if (gameObject.tag == "Player")
                     {
-                        print("Player died");
                         PlayExplosionInstance(gameObject.GetComponent<Transform>().position);
                         coliderComponent.enabled = false;
                         rendererComponent.enabled = false;

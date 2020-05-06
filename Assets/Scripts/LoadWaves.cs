@@ -14,7 +14,6 @@ public class LoadWaves : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("Wave list loaded");
         currentWave = 0;
 
         // Add available waves to list
@@ -22,7 +21,6 @@ public class LoadWaves : MonoBehaviour
         foreach (Transform child in transform)
         {
             waveList.Add(child);
-            print("Wave added to list: " + child.GetComponent<BattleSystem>().waveNumber.ToString());
         }
         waves = waveList.ToArray();
 
@@ -41,7 +39,6 @@ public class LoadWaves : MonoBehaviour
     {
         // Spawn next wave of enemies, if any remaining
         currentWave += 1;
-        print("Loading wave " + currentWave.ToString());
         if(currentWave >= 6)
         {
             Invoke("LoadMainMenu", 3f);
