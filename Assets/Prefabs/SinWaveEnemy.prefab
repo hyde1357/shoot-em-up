@@ -163,6 +163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 2, y: 2}
   direction: {x: -1, y: 0}
+  period: 2
+  radius: 2
+  rotateSpeed: 2
 --- !u!114 &417094784104321529
 MonoBehaviour:
   m_ObjectHideFlags: 0

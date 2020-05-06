@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - SinEnemy
+  - CircleEnemy
   layers:
   - Default
   - TransparentFX

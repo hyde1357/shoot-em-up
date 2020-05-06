@@ -10,8 +10,10 @@ public class BattleSystem : MonoBehaviour
 
     void Update()
     {
-        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-        if (gameObjects.Length == 0 && enemiesSpawned == true)
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] sinEnemies = GameObject.FindGameObjectsWithTag("SinEnemy");
+        GameObject[] circleEnemies = GameObject.FindGameObjectsWithTag("CircleEnemy");
+        if (enemies.Length == 0 && sinEnemies.Length == 0 && circleEnemies.Length == 0 && enemiesSpawned == true)
         {
             enemiesDefeated = true;
             print("Enemies defeated. Waiting for next wave");

@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] ParticleSystem explosionParticles;
     [SerializeField] AudioClip explosionSound;
     [SerializeField] AudioClip hitSound;
+    [SerializeField] private HealthBar healthBar;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +18,11 @@ public class Health : MonoBehaviour
             if(shot.isEnemyShot != isEnemy)
             {
                 hp -= shot.damage;
+                if(healthBar != null)
+                {
+                    float health = 0.05f * (float)hp;
+                    healthBar.SetSize(health);
+                }
                 audioSource.PlayOneShot(hitSound);
                 Destroy(shot.gameObject);
                 if(hp <= 0)
@@ -30,15 +36,8 @@ public class Health : MonoBehaviour
     {
         ParticleSystem explosionEffect = Instantiate(explosionParticles, position, Quaternion.identity);
         AudioSource.PlayClipAtPoint(explosionSound, position);
-        /*AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-        AudioSource explosionAudioSource = Instantiate(audioSource, position, Quaternion.identity);
-        AudioClip explosionAudio = Instantiate(explosionSound, position, Quaternion.identity);
-        explosionAudioSource.PlayOneShot(explosionAudio);*/
         explosionEffect.Play();
         Destroy(explosionEffect, 1f);
-        
-        //Destroy(explosionAudio, 2f);
-        //Destroy(explosionAudioSource, 2f);
         
         Destroy(gameObject);
     }
