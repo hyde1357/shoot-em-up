@@ -6,12 +6,10 @@ public class EnemyBehavior : MonoBehaviour
     private MoveScript moveScript;
     private Collider2D coliderComponent;
     private SpriteRenderer rendererComponent;
-    public string testi = "Spawned enemy ship";
 
     public bool hasSpawn;
     [SerializeField] AudioClip gunSound;
-
-    // Start is called before the first frame update
+    
     void Awake()
     {
         weapons = GetComponentsInChildren<Weapon>();
@@ -23,6 +21,7 @@ public class EnemyBehavior : MonoBehaviour
     void Start()
     {
         hasSpawn = false;
+
         // Disable everything
         gameObject.SetActive(false);
     }
@@ -42,7 +41,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void AutoFire()
     {
-        // Auto fire the gun
+        // Auto fire the gun in given pattern
         AudioSource audioSource = gameObject.GetComponent<AudioSource>();
         foreach (Weapon weapon in weapons)
         {

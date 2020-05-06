@@ -18,6 +18,7 @@ public class MoveScript : MonoBehaviour
 
     void Update()
     {
+        // Movement pattern is specified by tag value
         if(gameObject.tag == "SinEnemy")
         {
             float cycles = Time.time / period;

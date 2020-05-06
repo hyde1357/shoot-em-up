@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
-        //if(transform.position.x <= 4.1 && transform.position.x >= -4.1) { }
+
         Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
         movement *= Time.deltaTime;
         transform.Translate(movement);
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     private void RestrictPlayerMovement()
     {
 
-        // Make sure we are not outside the camera bounds
+        // Make sure we are not outside the camera bounds, also restrict movement to lower portion of the screen
         var dist = (transform.position - Camera.main.transform.position).z;
 
         var leftBorder = Camera.main.ViewportToWorldPoint(

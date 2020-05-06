@@ -10,25 +10,25 @@ public class BattleSystem : MonoBehaviour
 
     void Update()
     {
+        // Make sure that enemies of all types are destroyed before loading next wave from LoadWaves script.
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] sinEnemies = GameObject.FindGameObjectsWithTag("SinEnemy");
         GameObject[] circleEnemies = GameObject.FindGameObjectsWithTag("CircleEnemy");
         if (enemies.Length == 0 && sinEnemies.Length == 0 && circleEnemies.Length == 0 && enemiesSpawned == true)
         {
             enemiesDefeated = true;
-            print("Enemies defeated. Waiting for next wave");
             return;
         }
     }
 
+    // 3 seconds of break between waves 
     public void StartBattle()
     {
         enemiesDefeated = false;
-        //waveNumber = wave;
-        Debug.Log("Start wave " + waveNumber.ToString());
         Invoke("SpawnEnemies", 3f);
     }
 
+    // Spawn all enemies from the enemy list of current wave
     private void SpawnEnemies()
     {
         foreach (Transform child in transform)
