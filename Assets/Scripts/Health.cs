@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Health : MonoBehaviour
 {
@@ -23,19 +21,25 @@ public class Health : MonoBehaviour
                 Destroy(shot.gameObject);
                 if(hp <= 0)
                 {
-                    audioSource.PlayOneShot(explosionSound);
-                    DestroyShip();
-                    /*explosionParticles.Play();
-                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
-                    //gameObject.GetComponent<MeshCollider>().enabled = false;
-                    gameObject.GetComponent<Weapon>().enabled = false;
-                    Invoke("DestroyShip", 1f);*/
+                    DestroyShip(gameObject.GetComponent<Transform>().position);
                 }
             }
         }
     }
-    private void DestroyShip()
+    private void DestroyShip(Vector3 position)
     {
+        ParticleSystem explosionEffect = Instantiate(explosionParticles, position, Quaternion.identity);
+        AudioSource.PlayClipAtPoint(explosionSound, position);
+        /*AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        AudioSource explosionAudioSource = Instantiate(audioSource, position, Quaternion.identity);
+        AudioClip explosionAudio = Instantiate(explosionSound, position, Quaternion.identity);
+        explosionAudioSource.PlayOneShot(explosionAudio);*/
+        explosionEffect.Play();
+        Destroy(explosionEffect, 1f);
+        
+        //Destroy(explosionAudio, 2f);
+        //Destroy(explosionAudioSource, 2f);
+        
         Destroy(gameObject);
     }
 }
